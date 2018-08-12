@@ -3,13 +3,12 @@ class Song < ActiveRecord::Base
 
 
   def artist_name
-    self.artist_name
+    self.artist
   end
 
-  def artist_name=(aname)
-    new_song = Song.new
-    new_song.artist_name = aname
-    new_song.save
+  def artist_name=(name)
+    new_artist = Artist.find_or_create_by(:name => name)
+    self.artist = new_artist
   end
 
 end
