@@ -6,9 +6,9 @@ class Song < ActiveRecord::Base
     self.artist_name
   end
 
-  def artist_name=(name)
+  def artist_name=(aname)
     new_song = Song.new
-    new_song.artist_name = name
+    new_song.artist_name = aname
     new_song.save
     new_song
   end
